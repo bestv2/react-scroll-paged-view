@@ -12,6 +12,7 @@ import {
 import PropTypes from 'prop-types'
 
 import ScrollPagedView, { ViewPaged } from 'react-scroll-paged-view'
+// import ScrollPagedView, { ViewPaged } from './../src'
 
 let height = Dimensions.get('window').height
 const width = Dimensions.get('window').width
@@ -57,20 +58,21 @@ export default class App extends Component {
   }
 
   render() {
-    // const WrapView = ScrollPagedView
-    const WrapView = ViewPaged
+    const WrapView = ScrollPagedView
+    // const WrapView = ViewPaged
 
     return (
       <View style={Style.container}>
         <WrapView
-          onChange={this._onChange}
-          onResponder={this._onResponder}
-          renderHeader={this._renderTabBar}
+          // onChange={this._onChange}
+          // onResponder={this._onResponder}
+          // renderHeader={this._renderTabBar}
           // renderFooter={this._renderDot}
           // tabBarPosition='top'
           // hasAnimation={false}
           // initialPage={0}
-          vertical={false}
+          isMovingRender
+          // vertical={false}
           // initialPage={1}
           // infinite
           // locked
@@ -161,7 +163,7 @@ const Style = StyleSheet.create({
   },
   pageItem_1: {
     backgroundColor: 'green',
-    height,
+    height: height * 2,
     width,
   },
   pageItem_2: {
